@@ -51,7 +51,7 @@ export class App {
 
   loadModel() {
     this.loader = new GLTFLoader();
-    this.loader.load(('/marcus.glb'), (response) => {
+    this.loader.load(('./marcus.glb'), (response) => {
       let material = new MeshStandardMaterial({
         metalness: 0.6,
         roughness: 0.4,
