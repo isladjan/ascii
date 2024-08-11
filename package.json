@@ -1,0 +1,25 @@
+{
+  "name": "ascii",
+  "version": "1.0.0",
+  "description": "An ASCII effect for THREE.js and post-processing (using vanilla THREE.js).",
+  "author": "isladjan - ilic sladjan",
+  "keywords": [
+    "ascii",
+    "three.js",
+    "postprocessing"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "postprocessing": "^6.36.0",
+    "three": "^0.167.1"
+  }
+}
