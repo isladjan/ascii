@@ -1,6 +1,6 @@
 {
   "name": "@isladjan/ascii2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ASCII effect for THREE.js and post-processing (using vanilla THREE.js).",
   "author": {
     "name": "isladjan - ilic sladjan",
