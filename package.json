@@ -2,13 +2,25 @@
   "name": "ascii",
   "version": "1.0.0",
   "description": "An ASCII effect for THREE.js and post-processing (using vanilla THREE.js).",
-  "author": "isladjan - ilic sladjan",
+  "author": {
+    "name": "isladjan - ilic sladjan",
+    "url": "https://isladjan.com/"
+  },
   "keywords": [
     "ascii",
     "three.js",
     "postprocessing"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/isladjan/ascii",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isladjan/ascii.git",
+    "email": "isladjan83@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/isladjan/ascii/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

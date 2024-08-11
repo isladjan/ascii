@@ -1,7 +1,7 @@
 import { WebGLRenderer, Scene, PerspectiveCamera, Mesh, DirectionalLight, MeshStandardMaterial} from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EffectComposer, RenderPass, EffectPass } from "postprocessing";
-import { ASCIIEffect } from './asciiEffect.min.js'
+import { ASCIIEffect } from '../asciiEffect.min.js'
 let touchDevice;
 
 
