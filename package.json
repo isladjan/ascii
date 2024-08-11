@@ -1,5 +1,5 @@
 {
-  "name": "ascii",
+  "name": "@isladjan/ascii2",
   "version": "1.0.0",
   "description": "An ASCII effect for THREE.js and post-processing (using vanilla THREE.js).",
   "author": {
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/isladjan/ascii/issues"
   },
-  "type": "module",
+  "main": "asciiEffect.min.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -31,6 +31,7 @@
     "vite": "^5.4.0"
   },
   "dependencies": {
+    "@isladjan/ascii": "^1.0.0",
     "postprocessing": "^6.36.0",
     "three": "^0.167.1"
   }
