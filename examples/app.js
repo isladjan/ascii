@@ -13,6 +13,8 @@ export class App {
     if (matchMedia("(pointer: coarse)").matches) touchDevice = true;
     else touchDevice = false;
 
+    document.querySelector(".arrowLeft").style.opacity = 1;
+
     this.initThree();
     this.loadModel();
     this.asciiInit();
