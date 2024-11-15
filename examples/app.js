@@ -1,7 +1,8 @@
 import { WebGLRenderer, Scene, PerspectiveCamera, Mesh, DirectionalLight, MeshStandardMaterial} from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EffectComposer, RenderPass, EffectPass } from "postprocessing";
-import { ASCII } from '../ascii.js'
+import { ASCII } from '../ascii.js';
+import modelUrl from '/marcus.glb?url'; 
 let touchDevice;
 
 
@@ -12,8 +13,6 @@ export class App {
 
     if (matchMedia("(pointer: coarse)").matches) touchDevice = true;
     else touchDevice = false;
-
-    document.querySelector(".arrowLeft").style.opacity = 1;
 
     this.initThree();
     this.loadModel();
@@ -53,7 +52,7 @@ export class App {
 
   loadModel() {
     this.loader = new GLTFLoader();
-    this.loader.load(('./marcus.glb'), (response) => {
+    this.loader.load((modelUrl), (response) => {
       let material = new MeshStandardMaterial({
         metalness: 0.6,
         roughness: 0.4,

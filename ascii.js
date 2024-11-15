@@ -1,5 +1,4 @@
 // Three.js ascii effect - https://github.com/isladjan/ascii
-// based on: https://gist.github.com/cieplak/0f1f615b0f245cccbea34c15d8d09cb6
 'use strict';
 import {
     CanvasTexture,

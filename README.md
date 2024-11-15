@@ -1,10 +1,15 @@
 # ASCII Effect
 
-An ASCII effect for THREE.js and post-processing (using vanilla THREE.js).
+An ASCII effect for THREE.js and post-processing.
 
-Take a peek at [demo1](https://isladjan.com/works/ascii1/) and [demo2](https://isladjan.com/works/ascii2/)
+This module implements an ASCII art post-processing effect using Three.js and GLSL shaders. It transforms a rendered scene into an ASCII representation by mapping pixel brightness to a set of ASCII characters. The effect generates a texture containing specified ASCII characters using an HTML canvas, which the shader samples to replace image pixels with characters (a much better solution in terms of performance than using actual text). Customizable parameters include the character set, font, font size, cell size, color, and inversion option.
 
-The three/examples/jsm library also includes an ASCII effect, but I would recommend avoiding it because it’s too slow and likely not intended for production use.
+Note: The Original three/examples/jsm library also includes an ASCII effect, but I would recommend avoiding it because it’s too slow and likely not intended for production use.
+
+Take a peek at [demo1](https://isladjan.com/lab/ascii1/) and [demo2](https://isladjan.com/lab/ascii2/)
+
+![Produce_0-ezgif com-crop](https://github.com/user-attachments/assets/8e93405d-8fdd-4189-a59b-c69a5a55978a)
+![ascii2](https://github.com/user-attachments/assets/7dcd2547-00d6-4401-9f78-95d3f3234fa0)
 
 This effect is based on the work of [cieplak/AsciiEffect.js](https://gist.github.com/cieplak/0f1f615b0f245cccbea34c15d8d09cb6) and [emilwidlund/ASCII](https://github.com/emilwidlund/ASCII)
 <br />

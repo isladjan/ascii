@@ -1,14 +1,59 @@
-/* athensPixel (pixel font) - it's used for most things */
+/* MARK: -Fonts */
 @font-face {
-  font-family: 'athensPixel';
-  src: url('./athenspixel.woff2') format('woff2');
+  font-family: 'departure-mono';
+  src: url('/fonts/departureMono-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
 }
 
+/* Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+npx 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(a) {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+:where(canvas) {
+  display: block;
+}
+
+/* Root Styles */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font1: 'departure-mono', system-ui, 'Courier New', 'Courier', monospace;
+  font-family: var(--font1);
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -22,52 +67,137 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
   background-color: #242424;
+  display: grid;
+  grid-template-columns: repeat(1fr, 2);
+  grid-template-areas: "effect, links";
+  caret-color: transparent;
 }
 
-canvas {
-  display: block;
-}
 
-.webglCanvas {
+/* main effect */
+.effect-container {
+  grid-area: effect;
   width: 100svw;
   height: 100svh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-.goBack {
-  position: absolute;
-  top:30px;
-  left:30px;
-  display: flex;
-  color: rgb(43, 107, 226);
-  transition: color 0.2s;
-}
-
-.goBack:hover {
-  color: rgb(111, 154, 235);
-}
-
-.goBack .arrowLeft {
-  width: 60px;
-}
-
-.goBack .text {
-  margin-left: 1.5rem;
-  font-family: 'athensPixel';
-  font-size: 2rem;
-}
-
-@media screen and (max-width: 500px) {
-  .goBack .text {
-    margin-top: 1.5vw;
-    font-size: 5.5vw;
+  .webglCanvas {
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
+}
+
+
+/* styling of other auxiliary elements that are not related to the effect */
+.link-constainer {
+  --margin: 20px;
+  grid-area: links;
+  height: 100%;
+  mix-blend-mode: difference;
+
+  .top {
+    position: absolute;
+    top: var(--margin);
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--margin);
+
+    h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 8px;
+      }
+    }
+
+    .original-link {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      position: relative;
+      line-height: .9;
+      align-self: flex-end;
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: calc(var(--margin) - 10px);
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 var(--margin);
+
+    .gitHub {
+
+      svg {
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .copyright {
+      text-transform: uppercase;
+      font-size: .9rem;
+
+      .sign {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.4rem;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+        line-height: .5;
+      }
+    }
+  }
+
+  a {
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: rgb(243, 140, 67);
+  }
+
+}
+
+@media (max-width: 800px) {
+  .link-constainer .top {
+    h1 .hd {
+       display: none;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+
+  .link-constainer {
+    .original-link {
+      display: none;
+    }
+
+    .bottom {
+
+      a {
+        font-size: .9rem;
+      }
+    }
+  }
+
 }
